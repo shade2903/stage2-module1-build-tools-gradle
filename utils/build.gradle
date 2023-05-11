@@ -1,19 +1,30 @@
 plugins {
     // id for library
+    id 'org.gradle.java'
     // id for maven to publish jar to local repository
+    id 'org.gradle.maven-publish'
 }
 
 java {
 // provide sourceCompatibility
+//    toolchain {
+//        languageVersion = JavaLanguageVersion.of(11)
+//    }
+    withJavadocJar()
+    withSourcesJar()
+
 }
 
 repositories {
-// provide repository, where required dependencies are located
+    mavenCentral()
 }
 
 publishing {
     publications {
         maven(MavenPublication) {
+            artifactId = "stage2-module1-buikd-tools-gradle"
+            groupId = "com.epam.utils"
+            version = "0.0.1"
 // provide groupId
 // provide artifactId
 // provide version
@@ -28,6 +39,7 @@ publishing {
 jar {
     manifest {
         //provide manifest with such attributes as 'Implementation-Title', 'Implementation-Version'
+
     }
 }
 
