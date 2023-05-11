@@ -16,9 +16,8 @@ repositories {
 publishing {
     publications {
         maven(MavenPublication) {
-            artifactId = "stage2-module1-buikd-tools-gradle"
-            groupId = "com.epam.utils"
-            version = "0.0.1"
+            group = 'org.example.utils'
+            version = '1.3.5'
             from components.java
         }
     }
