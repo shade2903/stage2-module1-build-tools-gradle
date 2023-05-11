@@ -1,4 +1,26 @@
-//add everything here
+plugins {
+    id 'org.gradle.java'
+    id 'org.gradle.maven-publish'
+}
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+    sourceCompatibility = '11'
+}
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+    implementation project(':utils')
+}
+dependencies {
+    testImplementation "junit:junit:4.13"
+}
+dependencies {
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.10'
+}
 
 test {
     useJUnitPlatform()

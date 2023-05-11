@@ -4,8 +4,12 @@ import java.util.List;
 
 public class Utils {
     public static boolean isAllPositiveNumbers(List<String> args) {
-        //magic happens here
-        return false;
+        for(String e : args){
+            if(Integer.parseInt(e)< 0){
+                return false;
+            }
+        }
+        return true;
 
     }
 }
