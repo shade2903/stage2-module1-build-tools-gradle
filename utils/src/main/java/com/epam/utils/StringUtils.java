@@ -2,10 +2,10 @@ package com.epam.utils;
 
 public class StringUtils {
     public static boolean isPositiveNumber(String str) {
-        if(org.apache.commons.lang3.StringUtils.isNumeric(str)){
-            return !org.apache.commons.lang3.StringUtils.contains(str,"-");
+        try {
+            return Double.parseDouble(str) > 0;
+        } catch (NumberFormatException | NullPointerException e) {
+            return false;
         }
-
-        return false;
     }
 }
